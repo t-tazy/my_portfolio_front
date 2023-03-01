@@ -17,14 +17,15 @@ const createCalendar = () => {
     return day;
   });
 };
+import { CalendarElement } from '../CalendarElement';
 
 const calendarArray = createCalendar();
 
 export const CalendarBoard = () => (
-  <Grid2 container className="gird" columns={7} spacing={0}>
+  <Grid2 container className="grid" columns={7} spacing={0}>
     {calendarArray.map((c) => (
       <Grid2 key={c.toISOString()} xs={1}>
-        <div className="element">{c.format('D')}</div>
+        <CalendarElement>{c.format('D')}</CalendarElement>
       </Grid2>
     ))}
   </Grid2>
