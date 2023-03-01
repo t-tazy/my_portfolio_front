@@ -7,9 +7,9 @@ const calendarArray = createCalendar();
 
 export const CalendarBoard = () => (
   <Grid2 container className="grid" columns={7} spacing={0}>
-    {calendarArray.map((c) => (
-      <Grid2 key={c.toISOString()} xs={1}>
-        <CalendarElement>{c.format('D')}</CalendarElement>
+    {calendarArray.map((day) => (
+      <Grid2 key={day.toISOString()} xs={1}>
+        <CalendarElement day={day} />
       </Grid2>
     ))}
   </Grid2>

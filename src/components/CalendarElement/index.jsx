@@ -1,7 +1,15 @@
+import { Typography } from '@mui/material';
 import './style.css';
 
-export const CalendarElement = ({ children }) => (
+export const CalendarElement = ({ day }) => (
   <div className="element">
-    <div className="date">{children}</div>
+    <Typography
+      className="date"
+      align="center"
+      variant="caption"
+      component="div"
+    >
+      {day.format('D')}
+    </Typography>
   </div>
 );
