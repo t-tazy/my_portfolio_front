@@ -13,3 +13,20 @@ export const createCalendar = () => {
     return day;
   });
 };
+
+// 当日はどうかを文字列に変換して比較
+// d1, d2はdayjsのインスタンス
+export const isToday = (d1, d2) => {
+  const compareFormat = 'YYYYMMDD';
+  return d1.format(compareFormat) === d2.format(compareFormat);
+};
+
+// 当月かどうか判定
+// 0 (Jan) to 11 (Dec)
+export const isCurrentMonth = (m1, m2) => {
+  const compareFormat = 'YYYYMM';
+  return m1.format(compareFormat) === m2.format(compareFormat);
+};
+
+// 月初めか判定
+export const isFirstDay = (day) => day.date() === 1;
