@@ -2,8 +2,8 @@ import dayjs from 'dayjs';
 
 // カレンダーは7x5
 // 日曜日スタートとする
-export const createCalendar = () => {
-  const firstDay = dayjs().startOf('month'); // 今月の最初の日を取得
+export const createCalendar = (calendarState) => {
+  const firstDay = getMonth(calendarState); // 今月の最初の日を取得
   const firstDayIndex = firstDay.day(); // 0 (Sunday) to 6 (Saturday)
   return new Array(35).fill(0).map((_, i) => {
     const diffFromFirstDay = i - firstDayIndex;
@@ -30,3 +30,6 @@ export const isCurrentMonth = (m1, m2) => {
 
 // 月初めか判定
 export const isFirstDay = (day) => day.date() === 1;
+
+// calendar stateを受け取り、その年月のdayjsインスタンスを返す
+export const getMonth = ({ year, month }) => dayjs(`${year}-${month}`);
