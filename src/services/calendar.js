@@ -14,6 +14,12 @@ export const createCalendar = (calendarState) => {
   });
 };
 
+// dayjsインスタンスを受け取り、
+// calendarStateに変換して返す
+export const formatMonth = (day) => ({
+  month: day.month() + 1,
+  year: day.year(),
+});
 // 当日はどうかを文字列に変換して比較
 // d1, d2はdayjsのインスタンス
 export const isToday = (d1, d2) => {
