@@ -6,5 +6,10 @@ export const ContainerCalendarBoard = () => {
   const calendar = useSelector((state) => state.calendar);
   const dispatch = useDispatch();
 
-  return <CalendarBoard calendarArray={createCalendar(calendar)} />;
+  return (
+    <CalendarBoard
+      calendarArray={createCalendar(calendar)}
+      calendar={calendar}
+    />
+  );
 };

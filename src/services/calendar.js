@@ -38,9 +38,10 @@ export const isToday = (d1, d2) => {
   return d1.format(compareFormat) === d2.format(compareFormat);
 };
 
-// 当月かどうか判定
+// カレンダーの状態が表示されている月と同じかどうか判定
 // 0 (Jan) to 11 (Dec)
-export const isCurrentMonth = (m1, m2) => {
+// m1, m2はdayjsのインスタンス
+export const isSameMonth = (m1, m2) => {
   const compareFormat = 'YYYYMM';
   return m1.format(compareFormat) === m2.format(compareFormat);
 };

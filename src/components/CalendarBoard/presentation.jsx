@@ -5,7 +5,7 @@ import './style.css';
 
 const days = ['日', '月', '火', '水', '木', '金', '土'];
 
-export const CalendarBoard = ({ calendarArray }) => {
+export const CalendarBoard = ({ calendarArray, calendar }) => {
   return (
     <Grid2 container className="grid" columns={7} spacing={0}>
       {days.map((d) => (
@@ -23,7 +23,7 @@ export const CalendarBoard = ({ calendarArray }) => {
       ))}
       {calendarArray.map((day) => (
         <Grid2 key={day.toISOString()} xs={1}>
-          <CalendarElement day={day} />
+          <CalendarElement day={day} calendar={calendar} />
         </Grid2>
       ))}
     </Grid2>
