@@ -20,6 +20,17 @@ export const formatMonth = (day) => ({
   month: day.month() + 1,
   year: day.year(),
 });
+
+export const getNextMonth = (calendarState) => {
+  const day = getMonth(calendarState).add(1, 'month');
+  return formatMonth(day);
+};
+
+export const getPrevMonth = (calendarState) => {
+  const day = getMonth(calendarState).add(-1, 'month');
+  return formatMonth(day);
+};
+
 // 当日はどうかを文字列に変換して比較
 // d1, d2はdayjsのインスタンス
 export const isToday = (d1, d2) => {

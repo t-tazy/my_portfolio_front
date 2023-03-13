@@ -1,7 +1,7 @@
 import { ArrowBackIosNew, ArrowForwardIos, Dehaze } from '@mui/icons-material';
 import { IconButton, Toolbar, Typography } from '@mui/material';
 
-export const Navigation = () => {
+export const Navigation = ({ setPrevMonth, setNextMonth }) => {
   return (
     <Toolbar>
       <IconButton>
@@ -15,10 +15,10 @@ export const Navigation = () => {
       >
         カレンダー
       </Typography>
-      <IconButton size="small">
+      <IconButton size="small" onClick={setPrevMonth}>
         <ArrowBackIosNew />
       </IconButton>
-      <IconButton size="small">
+      <IconButton size="small" onClick={setNextMonth}>
         <ArrowForwardIos />
       </IconButton>
     </Toolbar>
