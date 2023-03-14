@@ -12,8 +12,18 @@
     "format": "prettier --write --loglevel=warn '{public,src}/**/*.{js,jsx,html,json}'"
   },
   "dependencies": {
+    "@date-io/dayjs": "^2.16.0",
+    "@emotion/react": "^11.10.6",
+    "@emotion/styled": "^11.10.6",
+    "@mui/icons-material": "^5.11.11",
+    "@mui/material": "^5.11.10",
+    "@mui/x-date-pickers": "^6.0.1",
+    "@reduxjs/toolkit": "^1.9.3",
+    "dayjs": "^1.11.7",
     "react": "^18.2.0",
-    "react-dom": "^18.2.0"
+    "react-dom": "^18.2.0",
+    "react-redux": "^8.0.5",
+    "redux": "^4.2.1"
   },
   "devDependencies": {
     "@types/react": "^18.0.27",
