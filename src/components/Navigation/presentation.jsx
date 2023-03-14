@@ -1,7 +1,8 @@
 import { ArrowBackIosNew, ArrowForwardIos, Dehaze } from '@mui/icons-material';
 import { IconButton, Toolbar, Typography } from '@mui/material';
+import { DatePicker } from '@mui/x-date-pickers';
 
-export const Navigation = ({ setPrevMonth, setNextMonth }) => {
+export const Navigation = ({ setPrevMonth, setNextMonth, setMonth, month }) => {
   return (
     <Toolbar>
       <IconButton>
@@ -18,6 +19,13 @@ export const Navigation = ({ setPrevMonth, setNextMonth }) => {
       <IconButton size="small" onClick={setPrevMonth}>
         <ArrowBackIosNew />
       </IconButton>
+      <DatePicker
+        value={month}
+        openTo="month"
+        views={['year', 'month']}
+        onChange={(params) => setMonth(params)}
+        renderInput={(params) => <TextField {...params} />}
+      />
       <IconButton size="small" onClick={setNextMonth}>
         <ArrowForwardIos />
       </IconButton>

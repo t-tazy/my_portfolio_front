@@ -1,6 +1,11 @@
 import { useDispatch, useSelector } from 'react-redux';
 import { setMonth } from '../../redux/calendarSlice';
-import { getNextMonth, getPrevMonth } from '../../services/calendar';
+import {
+  formatMonth,
+  getMonth,
+  getNextMonth,
+  getPrevMonth,
+} from '../../services/calendar';
 import { Navigation } from './presentation';
 
 export const ContainerNavigation = () => {
@@ -14,6 +19,8 @@ export const ContainerNavigation = () => {
     <Navigation
       setNextMonth={() => dispatch(setMonth(nextMonth))}
       setPrevMonth={() => dispatch(setMonth(prevMonth))}
+      setMonth={(dayjs) => dispatch(setMonth(formatMonth(dayjs)))}
+      month={getMonth(calendar)}
     />
   );
 };
