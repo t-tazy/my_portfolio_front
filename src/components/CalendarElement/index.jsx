@@ -13,7 +13,6 @@ export const CalendarElement = ({ day, calendar }) => {
   const today = dayjs();
   const currentMonth = getMonth(calendar); // global stateとして管理されている
 
-  console.log('global state', currentMonth);
   return (
     <div className="element">
       <Typography
