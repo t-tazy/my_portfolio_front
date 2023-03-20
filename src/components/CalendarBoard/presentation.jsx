@@ -5,7 +5,11 @@ import './style.css';
 
 const days = ['日', '月', '火', '水', '木', '金', '土'];
 
-export const CalendarBoard = ({ calendarArray, calendar }) => {
+export const CalendarBoard = ({
+  calendarArray,
+  calendar,
+  toggleAddRecordDialog,
+}) => {
   return (
     <Grid2 container className="grid" columns={7} spacing={0}>
       {days.map((d) => (
@@ -22,7 +26,7 @@ export const CalendarBoard = ({ calendarArray, calendar }) => {
         </Grid2>
       ))}
       {calendarArray.map((day) => (
-        <Grid2 key={day.toISOString()} xs={1}>
+        <Grid2 key={day.toISOString()} xs={1} onClick={toggleAddRecordDialog}>
           <CalendarElement day={day} calendar={calendar} />
         </Grid2>
       ))}
