@@ -17,6 +17,7 @@ import {
 } from 'react-router-dom';
 import { SignIn } from './components/SignIn';
 import { SignUp } from './components/SignUp';
+import { CookiesProvider } from 'react-cookie';
 
 // ローカライズ
 dayjs.locale('ja');
@@ -41,7 +42,9 @@ ReactDOM.createRoot(document.getElementById('root')).render(
   <React.StrictMode>
     <Provider store={store}>
       <LocalizationProvider dateAdapter={AdapterDayjs}>
-        <RouterProvider router={router} />
+        <CookiesProvider>
+          <RouterProvider router={router} />
+        </CookiesProvider>
       </LocalizationProvider>
     </Provider>
   </React.StrictMode>,
